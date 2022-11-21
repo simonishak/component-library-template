@@ -1,7 +1,7 @@
 import React from "react";
 import TextField from "@mui/material/TextField";
 
-interface Props {
+export interface Props {
   placeholder: string;
   defaultText: string;
 }

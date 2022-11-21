@@ -1,6 +1,6 @@
 import React from "react";
 import "./TextBox.css";
-interface Props {
+export interface Props {
     text: string;
 }
 declare const TextBox: React.FC<Props>;
