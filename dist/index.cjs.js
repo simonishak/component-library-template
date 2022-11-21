@@ -68,7 +68,7 @@ var css_248z = "";
 styleInject(css_248z);
 
 var TextBox = function (props) {
-    return (jsxRuntime.jsx(Typography__default["default"], __assign({ variant: "h1", component: "h1" }, { children: props.text })));
+    return (jsxRuntime.jsx(Typography__default["default"], __assign({ variant: "h2", component: "h2" }, { children: props.text })));
 };
 
 var TextInput = function (props) {

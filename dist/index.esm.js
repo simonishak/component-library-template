@@ -59,7 +59,7 @@ var css_248z = "";
 styleInject(css_248z);
 
 var TextBox = function (props) {
-    return (jsx(Typography, __assign({ variant: "h1", component: "h1" }, { children: props.text })));
+    return (jsx(Typography, __assign({ variant: "h2", component: "h2" }, { children: props.text })));
 };
 
 var TextInput = function (props) {
