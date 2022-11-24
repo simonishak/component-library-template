@@ -1,11 +1,12 @@
 import "./App.css";
-import { TextBox, TextInput } from "my-component-app";
+import { TextBox, TextInput, UnifyList } from "my-component-app";
 
 function App() {
   return (
     <div className="App">
       <TextBox text="Banana"></TextBox>
       <TextInput defaultText="Test" placeholder="Testing lsol"></TextInput>
+      <UnifyList items={[{ text: "Item 1" }, { text: "Item 3" }]} />
     </div>
   );
 }

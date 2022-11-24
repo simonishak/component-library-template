@@ -1,6 +1,7 @@
 import { jsx } from 'react/jsx-runtime';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
+import { ListItem, ListItemButton, ListItemText, Box, List } from '@mui/material';
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -66,4 +67,11 @@ var TextInput = function (props) {
     return (jsx(TextField, { id: "outlined-required", label: props.placeholder, defaultValue: props.defaultText }));
 };
 
-export { TextBox, TextInput };
+var UnifyList = function (props) {
+    var items = props.items.map(function (item, idx) {
+        return (jsx(ListItem, __assign({ disablePadding: true }, { children: jsx(ListItemButton, { children: jsx(ListItemText, { primary: item.text }) }) }), idx));
+    });
+    return (jsx(Box, __assign({ sx: { width: "100%", maxWidth: 360, bgcolor: "background.paper" } }, { children: jsx("nav", __assign({ "aria-label": "main mailbox folders" }, { children: jsx(List, { children: items }) })) })));
+};
+
+export { TextBox, TextInput, UnifyList };

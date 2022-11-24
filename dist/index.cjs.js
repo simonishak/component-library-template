@@ -5,6 +5,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var jsxRuntime = require('react/jsx-runtime');
 var Typography = require('@mui/material/Typography');
 var TextField = require('@mui/material/TextField');
+var material = require('@mui/material');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -75,5 +76,13 @@ var TextInput = function (props) {
     return (jsxRuntime.jsx(TextField__default["default"], { id: "outlined-required", label: props.placeholder, defaultValue: props.defaultText }));
 };
 
+var UnifyList = function (props) {
+    var items = props.items.map(function (item, idx) {
+        return (jsxRuntime.jsx(material.ListItem, __assign({ disablePadding: true }, { children: jsxRuntime.jsx(material.ListItemButton, { children: jsxRuntime.jsx(material.ListItemText, { primary: item.text }) }) }), idx));
+    });
+    return (jsxRuntime.jsx(material.Box, __assign({ sx: { width: "100%", maxWidth: 360, bgcolor: "background.paper" } }, { children: jsxRuntime.jsx("nav", __assign({ "aria-label": "main mailbox folders" }, { children: jsxRuntime.jsx(material.List, { children: items }) })) })));
+};
+
 exports.TextBox = TextBox;
 exports.TextInput = TextInput;
+exports.UnifyList = UnifyList;
