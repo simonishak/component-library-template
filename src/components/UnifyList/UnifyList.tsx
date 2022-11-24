@@ -1,13 +1,13 @@
 import {
   Box,
-  Divider,
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
 } from "@mui/material";
 import React from "react";
+import theme from "../../theme";
+import { ThemeProvider } from "@emotion/react";
 
 export interface Props {
   items: Item[];
@@ -29,11 +29,13 @@ const UnifyList: React.FC<Props> = (props) => {
   });
 
   return (
-    <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
-      <nav aria-label="main mailbox folders">
-        <List>{items}</List>
-      </nav>
-    </Box>
+    <ThemeProvider theme={theme}>
+      <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
+        <nav aria-label="main mailbox folders">
+          <List>{items}</List>
+        </nav>
+      </Box>
+    </ThemeProvider>
   );
 };
 

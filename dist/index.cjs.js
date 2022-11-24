@@ -4,8 +4,9 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 var jsxRuntime = require('react/jsx-runtime');
 var Typography = require('@mui/material/Typography');
-var TextField = require('@mui/material/TextField');
 var material = require('@mui/material');
+var react = require('@emotion/react');
+var TextField = require('@mui/material/TextField');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
@@ -38,6 +39,14 @@ var __assign = function() {
     return __assign.apply(this, arguments);
 };
 
+var theme = material.createTheme({
+    typography: {
+        allVariants: {
+            fontFamily: "Whitney Book, Whitney SSM A, Whitney SSm B, Open Sans, Lato, Arial",
+        },
+    },
+});
+
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
   var insertAt = ref.insertAt;
@@ -69,18 +78,18 @@ var css_248z = "";
 styleInject(css_248z);
 
 var TextBox = function (props) {
-    return (jsxRuntime.jsx(Typography__default["default"], __assign({ variant: "h3", component: "h3" }, { children: props.text })));
+    return (jsxRuntime.jsx(react.ThemeProvider, __assign({ theme: theme }, { children: jsxRuntime.jsx(Typography__default["default"], __assign({ variant: "h3", component: "h3" }, { children: props.text })) })));
 };
 
 var TextInput = function (props) {
-    return (jsxRuntime.jsx(TextField__default["default"], { id: "outlined-required", label: props.placeholder, defaultValue: props.defaultText }));
+    return (jsxRuntime.jsx(react.ThemeProvider, __assign({ theme: theme }, { children: jsxRuntime.jsx(TextField__default["default"], { id: "outlined-required", label: props.placeholder, defaultValue: props.defaultText }) })));
 };
 
 var UnifyList = function (props) {
     var items = props.items.map(function (item, idx) {
         return (jsxRuntime.jsx(material.ListItem, __assign({ disablePadding: true }, { children: jsxRuntime.jsx(material.ListItemButton, { children: jsxRuntime.jsx(material.ListItemText, { primary: item.text }) }) }), idx));
     });
-    return (jsxRuntime.jsx(material.Box, __assign({ sx: { width: "100%", maxWidth: 360, bgcolor: "background.paper" } }, { children: jsxRuntime.jsx("nav", __assign({ "aria-label": "main mailbox folders" }, { children: jsxRuntime.jsx(material.List, { children: items }) })) })));
+    return (jsxRuntime.jsx(react.ThemeProvider, __assign({ theme: theme }, { children: jsxRuntime.jsx(material.Box, __assign({ sx: { width: "100%", maxWidth: 360, bgcolor: "background.paper" } }, { children: jsxRuntime.jsx("nav", __assign({ "aria-label": "main mailbox folders" }, { children: jsxRuntime.jsx(material.List, { children: items }) })) })) })));
 };
 
 exports.TextBox = TextBox;

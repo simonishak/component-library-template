@@ -1,7 +1,8 @@
 import { jsx } from 'react/jsx-runtime';
 import Typography from '@mui/material/Typography';
+import { createTheme, ListItem, ListItemButton, ListItemText, Box, List } from '@mui/material';
+import { ThemeProvider } from '@emotion/react';
 import TextField from '@mui/material/TextField';
-import { ListItem, ListItemButton, ListItemText, Box, List } from '@mui/material';
 
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
@@ -28,6 +29,14 @@ var __assign = function() {
     };
     return __assign.apply(this, arguments);
 };
+
+var theme = createTheme({
+    typography: {
+        allVariants: {
+            fontFamily: "Whitney Book, Whitney SSM A, Whitney SSm B, Open Sans, Lato, Arial",
+        },
+    },
+});
 
 function styleInject(css, ref) {
   if ( ref === void 0 ) ref = {};
@@ -60,18 +69,18 @@ var css_248z = "";
 styleInject(css_248z);
 
 var TextBox = function (props) {
-    return (jsx(Typography, __assign({ variant: "h3", component: "h3" }, { children: props.text })));
+    return (jsx(ThemeProvider, __assign({ theme: theme }, { children: jsx(Typography, __assign({ variant: "h3", component: "h3" }, { children: props.text })) })));
 };
 
 var TextInput = function (props) {
-    return (jsx(TextField, { id: "outlined-required", label: props.placeholder, defaultValue: props.defaultText }));
+    return (jsx(ThemeProvider, __assign({ theme: theme }, { children: jsx(TextField, { id: "outlined-required", label: props.placeholder, defaultValue: props.defaultText }) })));
 };
 
 var UnifyList = function (props) {
     var items = props.items.map(function (item, idx) {
         return (jsx(ListItem, __assign({ disablePadding: true }, { children: jsx(ListItemButton, { children: jsx(ListItemText, { primary: item.text }) }) }), idx));
     });
-    return (jsx(Box, __assign({ sx: { width: "100%", maxWidth: 360, bgcolor: "background.paper" } }, { children: jsx("nav", __assign({ "aria-label": "main mailbox folders" }, { children: jsx(List, { children: items }) })) })));
+    return (jsx(ThemeProvider, __assign({ theme: theme }, { children: jsx(Box, __assign({ sx: { width: "100%", maxWidth: 360, bgcolor: "background.paper" } }, { children: jsx("nav", __assign({ "aria-label": "main mailbox folders" }, { children: jsx(List, { children: items }) })) })) })));
 };
 
 export { TextBox, TextInput, UnifyList };
