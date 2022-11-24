@@ -1,5 +1,5 @@
 import babel from "@rollup/plugin-babel";
-import external from "rollup-plugin-peer-deps-external";
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import del from "rollup-plugin-delete";
 import pkg from "./package.json";
 import typescript from "@rollup/plugin-typescript";
@@ -14,7 +14,7 @@ export default [
       { file: pkg.module, format: "esm" },
     ],
     plugins: [
-      external(),
+      peerDepsExternal(),
       typescript({ tsconfig: "./tsconfig.json" }),
       babel({
         exclude: "node_modules/**",
@@ -23,7 +23,6 @@ export default [
       del({ targets: ["dist/*"] }),
       postcss(),
     ],
-    external: Object.keys(pkg.peerDependencies || {}),
   },
   {
     input: "dist/types/index.d.ts",

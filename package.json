@@ -76,12 +76,5 @@
     "rollup-plugin-dts": "4.2.3",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "4.0.2"
-  },
-  "peerDependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
-    "@mui/material": "^5.10.14",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
   }
 }

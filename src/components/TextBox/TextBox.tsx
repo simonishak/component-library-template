@@ -8,7 +8,7 @@ export interface Props {
 
 const TextBox: React.FC<Props> = (props) => {
   return (
-    <Typography variant="h2" component="h2">
+    <Typography variant="h3" component="h3">
       {props.text}
     </Typography>
   );
