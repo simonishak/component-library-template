@@ -1,6 +1,6 @@
-import { jsx } from 'react/jsx-runtime';
+import { jsxs, jsx } from 'react/jsx-runtime';
 import Typography from '@mui/material/Typography';
-import { createTheme, ListItem, ListItemButton, ListItemText, Box, List } from '@mui/material';
+import { createTheme, Button, ListItem, ListItemButton, ListItemText, Box, List } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 import TextField from '@mui/material/TextField';
 
@@ -31,6 +31,28 @@ var __assign = function() {
 };
 
 var theme = createTheme({
+    palette: {
+        primary: {
+            main: "#009fdf",
+            light: "#d2edfd",
+            dark: "#002d72",
+            contrastText: "#ffffff",
+        },
+        secondary: {
+            main: "#ffffff",
+            contrastText: "#009fdf",
+            dark: "#002d72",
+        },
+        success: {
+            main: "#7fba23",
+        },
+        warning: {
+            main: "#ffcd00",
+        },
+        error: {
+            main: "#a61731",
+        },
+    },
     typography: {
         allVariants: {
             fontFamily: "Whitney Book, Whitney SSM A, Whitney SSm B, Open Sans, Lato, Arial",
@@ -69,7 +91,7 @@ var css_248z = "";
 styleInject(css_248z);
 
 var TextBox = function (props) {
-    return (jsx(ThemeProvider, __assign({ theme: theme }, { children: jsx(Typography, __assign({ variant: "h3", component: "h3" }, { children: props.text })) })));
+    return (jsxs(ThemeProvider, __assign({ theme: theme }, { children: [jsx(Typography, __assign({ variant: "h3", component: "h3" }, { children: props.text })), jsx(Button, __assign({ variant: "contained", color: "secondary" }, { children: "Button" }))] })));
 };
 
 var TextInput = function (props) {

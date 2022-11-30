@@ -40,6 +40,28 @@ var __assign = function() {
 };
 
 var theme = material.createTheme({
+    palette: {
+        primary: {
+            main: "#009fdf",
+            light: "#d2edfd",
+            dark: "#002d72",
+            contrastText: "#ffffff",
+        },
+        secondary: {
+            main: "#ffffff",
+            contrastText: "#009fdf",
+            dark: "#002d72",
+        },
+        success: {
+            main: "#7fba23",
+        },
+        warning: {
+            main: "#ffcd00",
+        },
+        error: {
+            main: "#a61731",
+        },
+    },
     typography: {
         allVariants: {
             fontFamily: "Whitney Book, Whitney SSM A, Whitney SSm B, Open Sans, Lato, Arial",
@@ -78,7 +100,7 @@ var css_248z = "";
 styleInject(css_248z);
 
 var TextBox = function (props) {
-    return (jsxRuntime.jsx(react.ThemeProvider, __assign({ theme: theme }, { children: jsxRuntime.jsx(Typography__default["default"], __assign({ variant: "h3", component: "h3" }, { children: props.text })) })));
+    return (jsxRuntime.jsxs(react.ThemeProvider, __assign({ theme: theme }, { children: [jsxRuntime.jsx(Typography__default["default"], __assign({ variant: "h3", component: "h3" }, { children: props.text })), jsxRuntime.jsx(material.Button, __assign({ variant: "contained", color: "secondary" }, { children: "Button" }))] })));
 };
 
 var TextInput = function (props) {
