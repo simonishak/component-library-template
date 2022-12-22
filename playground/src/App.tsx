@@ -1,4 +1,6 @@
 import "./App.css";
+// TODO: Fix why it gives error
+// @ts-ignore
 import { TextBox, TextInput, UnifyList } from "my-component-app";
 
 function App() {

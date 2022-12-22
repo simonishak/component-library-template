@@ -9,7 +9,7 @@ import React from "react";
 import theme from "../../theme";
 import { ThemeProvider } from "@emotion/react";
 
-export interface Props {
+export interface UnifyListProps {
   items: Item[];
 }
 
@@ -17,7 +17,7 @@ export interface Item {
   text: string;
 }
 
-const UnifyList: React.FC<Props> = (props) => {
+const UnifyList: React.FC<UnifyListProps> = (props) => {
   const items = props.items.map((item, idx) => {
     return (
       <ListItem key={idx} disablePadding>

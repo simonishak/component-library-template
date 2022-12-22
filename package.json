@@ -2,10 +2,13 @@
   "name": "my-component-app",
   "version": "0.1.0",
   "private": true,
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
+  "main": "dist/cjs/index.cjs.js",
+  "module": "dist/esm/index.esm.js",
   "source": "src/index.tsx",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/user-event": "^13.5.0",

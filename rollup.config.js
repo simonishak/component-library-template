@@ -10,8 +10,8 @@ export default [
   {
     input: pkg.source,
     output: [
-      { file: pkg.main, format: "cjs" },
-      { file: pkg.module, format: "esm" },
+      { file: pkg.main, format: "cjs", sourcemap: true },
+      { file: pkg.module, format: "esm", sourcemap: true },
     ],
     plugins: [
       peerDepsExternal(),
@@ -25,7 +25,7 @@ export default [
     ],
   },
   {
-    input: "dist/types/index.d.ts",
+    input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     plugins: [dts()],
     external: [/\.css$/],

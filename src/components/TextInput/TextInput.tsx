@@ -3,12 +3,12 @@ import TextField from "@mui/material/TextField";
 import theme from "../../theme";
 import { ThemeProvider } from "@emotion/react";
 
-export interface Props {
+export interface TextInputProps {
   placeholder: string;
   defaultText: string;
 }
 
-const TextInput: React.FC<Props> = (props) => {
+const TextInput: React.FC<TextInputProps> = (props) => {
   return (
     <ThemeProvider theme={theme}>
       <TextField
